@@ -23,6 +23,8 @@ public final class PlatformInfo {
 
         String report = buildReport(student);
 
+        System.out.print(report);
+
         try {
             Path reportPath = Path.of("reports", "platform-info.txt");
 
@@ -31,6 +33,7 @@ public final class PlatformInfo {
             }
             Files.writeString(reportPath, report, StandardCharsets.UTF_8);
 
+            System.out.println("\nФайл звіту збережено за шляхом:");
             System.out.println(reportPath.toAbsolutePath().normalize());
 
         } catch (IOException e) {
